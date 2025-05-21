@@ -10,7 +10,7 @@ html {
 
 .page {
   inline-size: 1200px;
-  block-size: 800px;
+  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -64,8 +64,6 @@ ol {
 }
 
 .content {
-  flex-direction: row;
-  justify-content: center;
   display: grid;
   grid-template-columns: 711px 399px;
   grid-template-areas: "search details" ;
@@ -73,6 +71,7 @@ ol {
 }
 
 .result {
+  align-self: end;
   grid-area: search;
     display: flex;
   flex-direction: column;
@@ -81,14 +80,16 @@ ol {
 
 .result__video-container {
   width: 711px;
-  padding-top: 78px;
+  height: 386px;
+
   position: relative;
 }
 
 .result__video {
-  block-size: 386px;
-  inline-size: 100%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
