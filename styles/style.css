@@ -9,16 +9,16 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -50,15 +50,15 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
@@ -66,39 +66,181 @@ ol {
 .content {
   display: grid;
   grid-template-columns: 711px 399px;
-  grid-template-areas: "search details" ;
-  column-gap:  30px;
+  grid-template-areas: "search details";
+  column-gap: 30px;
 }
 
+/* Блок result c формой */
+
 .result {
-  align-self: end;
-  grid-area: search;
-    display: flex;
+  display: flex;
   flex-direction: column;
+  grid-area: search;
   gap: 16px;
+  align-self: end;
 }
 
 .result__video-container {
+  position: relative;
   width: 711px;
   height: 386px;
-
-  position: relative;
 }
 
 .result__video {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .search-form {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-
+  gap: 40px;
 }
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__label:hover {
+  text-decoration: underline 1px #fff;
+  text-underline-offset: 5px;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Блок с полем ввода */
+
+.search-form__textfield {
+  width: 225px;
+  height: 27px;
+  border-top: 1px solid #fff;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+  border-left: none;
+  padding: 0;
+  color: rgb(255, 255, 255, 0.7);
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  cursor: text;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.search-form__textfield:active {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/*Стили для чекбокса*/
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: block;
+  border: 1px solid #fff;
+  cursor: pointer;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  margin: 1px;
+  background-color: #fff;
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label:not(:has(.search-form__textfield)):hover {
+  text-decoration: underline;
+}
+
+/*Стили кнопки*/
+
+.button {
+  width: 100%;
+  border: 1px solid #fff;
+  padding: 6px 0;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline 1px #fff;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Блок со списком видео */
 
 .content__details {
   grid-area: details;
@@ -111,38 +253,89 @@ ol {
   font-family: "Oswald";
   font-weight: 700;
   font-size: 75px;
-  line-height: 93%;
+  line-height: 0.94;
   text-transform: uppercase;
 }
 
-.content__list-container {
+.content__accent {
+  color: #545050;
+}
 
+.content__list-container {
 }
 
 .content__list {
-  height: 298px;
-  overflow:scroll;
   position: relative;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 30px;
+  max-height: 298px;
+  overflow-y: auto;
+}
+
+.content__list-item {
+  padding: 0 3px;
+}
+
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
 }
 
 .content__video-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-}
-.content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
-  object-fit: cover;
-  object-position: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
 }
 
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  align-items: start;
+}
+
+.content__video-card-title {
+  max-width: 196px;
+  overflow: hidden;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  font-weight: 400;
+  line-height: 0.9;
+  line-clamp: 4;
+}
+
+.content__card-link_current {
+  background: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__video-card-thumbnail {
+  display: block;
+  justify-self: end;
+  inline-size: 194px;
+  block-size: 103px;
 }
