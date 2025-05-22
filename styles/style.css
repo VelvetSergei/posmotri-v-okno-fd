@@ -122,12 +122,12 @@ ol {
 .search-form__textfield {
   width: 225px;
   height: 27px;
-  border-top: 1px solid #fff;
+  border-top: currentColor;
   border-right: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: currentColor;
   border-left: none;
   padding: 0;
-  color: rgb(255, 255, 255, 0.7);
+  color: #fff;
   font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
@@ -209,7 +209,7 @@ ol {
 
 .button {
   width: 100%;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding: 6px 0;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -257,7 +257,7 @@ ol {
 
 .title {
   padding-bottom: 23px;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 0.94;
@@ -280,7 +280,7 @@ ol {
   gap: 30px;
   max-height: 298px;
   margin-bottom: 30px;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
 }
 
@@ -309,7 +309,7 @@ ol {
 .content__video-card-title {
   max-width: 196px;
   overflow: hidden;
-  font-family: Oswald, sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
@@ -321,6 +321,10 @@ ol {
   font-weight: 400;
   line-height: 0.9;
   line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .content__card-link_current {
