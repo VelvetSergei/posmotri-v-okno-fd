@@ -108,8 +108,11 @@ ol {
 }
 
 .search-form__fieldset-title {
+  font-family: "Fira Sans Condensed" sans-serif;
   font-weight: 400;
   font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -122,9 +125,9 @@ ol {
 .search-form__textfield {
   width: 225px;
   height: 27px;
-  border-top: currentColor;
+  border-top: 1px solid currentColor;
   border-right: none;
-  border-bottom: currentColor;
+  border-bottom: 1px solid currentColor;
   border-left: none;
   padding: 0;
   color: #fff;
@@ -167,6 +170,14 @@ ol {
   gap: 5px;
   width: fit-content;
   cursor: pointer;
+}
+
+.search-form__label-text {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
 }
 
 .search-form__checkbox-list {
@@ -215,6 +226,10 @@ ol {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 700;
   font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -253,10 +268,13 @@ ol {
   grid-area: details;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 }
 
 .title {
-  padding-bottom: 23px;
+  min-height: 210px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -270,6 +288,7 @@ ol {
 
 .content__list-container {
   position: relative;
+  max-height: 298px;
 }
 
 .content__list {
@@ -278,14 +297,13 @@ ol {
   flex-direction: column;
   flex-grow: 1;
   gap: 30px;
-  max-height: 298px;
+  max-height: 100%;
   margin-bottom: 30px;
-  overflow-x: auto;
   overflow-y: auto;
 }
 
 .content__list-item {
-  padding: 0 3px;
+  padding: 0 3px 0 2px;
 }
 
 .content__card-link {
@@ -304,23 +322,29 @@ ol {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 6px;
+  max-width: 182px;
 }
 
 .content__video-card-title {
-  max-width: 196px;
   overflow: hidden;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .content__video-card-description {
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
-  line-height: 0.9;
-  line-clamp: 4;
+  font-size: 18px;
+  line-height: 16.2px;
+  letter-spacing: 0;
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -351,6 +375,6 @@ ol {
 .content__video-card-thumbnail {
   object-fit: cover;
   object-position: center;
-  inline-size: 194px;
-  block-size: 103px;
+  width: 194px;
+  height: 103px;
 }
