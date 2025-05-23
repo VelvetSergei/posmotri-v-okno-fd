@@ -131,9 +131,12 @@ ol {
   border-left: none;
   padding: 0;
   color: #fff;
-  font-family: inherit;
-  font-weight: inherit;
-  font-size: inherit;
+  font-family: "Fira Sans Condensed", sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 1;
+letter-spacing: 0;
+
   background-color: transparent;
   cursor: text;
   appearance: none;
@@ -219,7 +222,6 @@ ol {
 /*Стили кнопки*/
 
 .button {
-  width: 100%;
   border: 1px solid currentColor;
   padding: 6px 0;
   color: #fff;
@@ -229,7 +231,7 @@ ol {
   line-height: 1;
   letter-spacing: 0;
   text-align: center;
-
+  min-height: 34px;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -238,7 +240,7 @@ ol {
 .search-form__submit-button {
   align-self: flex-end;
   width: 194px;
-  height: 34px;
+  
 }
 
 .more-button {
